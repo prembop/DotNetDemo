@@ -7,12 +7,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/prembop/DotNetDemo.git'
-            }
-        }
-
         stage('Restore') {
             steps {
                 sh 'dotnet restore'
@@ -45,6 +39,5 @@ pipeline {
                 sh 'sudo systemctl restart dotnetdemo'
             }
         }
-
     }
 }
